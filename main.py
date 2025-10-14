@@ -83,7 +83,7 @@ def write(name: str):
             None
         )
         while True:
-            message = input()
+            message = input() + "\n"
             resp = win32file.WriteFile(handle, message.encode())
     except pywintypes.error as e:
         if e.winerror == 109:
