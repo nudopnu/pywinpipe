@@ -3,15 +3,15 @@
 This CLI tool demonstrates a simple usage of Windows Named Pipes. Example:
 
 ```bash
-  # Run in terminal 1:
+# Run in terminal 1:
 
-      create -m inbound test
+    create -m inbound test
 
-  # Run in terminal 2:
+# Run in terminal 2:
 
-      write test
+    write test
 
-      <enter messages>
+    <enter messages>
 
 Options:
   --help  Show this message and exit.
@@ -21,4 +21,12 @@ Commands:
   read    Reads from an existing named pipe
   write   Writes to an existing named pipe
 
+```
+
+# Setup
+
+```bash
+python -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements.txt
 ```
