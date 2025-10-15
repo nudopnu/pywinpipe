@@ -10,9 +10,21 @@ MODES = {
 
 @click.group()
 def cli():
-    """"""
+    """
+    This CLI tool demonstrates a simple usage of Windows Named Pipes. Example:
 
-@cli.command("create")
+    # Run in terminal 1:
+
+        create -m inbound test
+    
+    # Run in terminal 2:
+
+        write test   
+ 
+        <enter messages>
+    """
+
+@cli.command("create", help="Creates a named pipe either in inbound or outbound mode")
 @click.option("-m", "--mode", type=click.Choice([m for m in MODES], case_sensitive=False), default="inbound", help="Operation mode.")
 @click.argument("name")
 def create(name: str, mode: str):
@@ -45,7 +57,7 @@ def create(name: str, mode: str):
         win32file.CloseHandle(pipe)
 
 
-@cli.command("read")
+@cli.command("read", help="Reads from an existing named pipe")
 @click.argument("name")
 def read(name: str):
     addr = f'\\\\.\\pipe\\{name}'
@@ -68,7 +80,7 @@ def read(name: str):
         else:
             print(e)
 
-@cli.command("write")
+@cli.command("write", help="Writes to an existing named pipe")
 @click.argument("name")
 def write(name: str):
     addr = f'\\\\.\\pipe\\{name}'
