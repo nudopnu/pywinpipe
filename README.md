@@ -1,6 +1,6 @@
 # pywinpipe
 
-This CLI tool demonstrates a simple usage of Windows Named Pipes. Example:
+This CLI tool demonstrates a simple usage of [Windows Named Pipes](https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipes). Example:
 
 ```bash
 # Run in terminal 1:
